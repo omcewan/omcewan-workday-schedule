@@ -138,7 +138,7 @@ let saveBtnClicks = {
 };
 
 loadSaveData();
-setInterval(pageReload, 900000);
+setInterval(pageReload, 300000);
 
 setInterval(checkHour, 0);
 
