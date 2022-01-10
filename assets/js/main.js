@@ -94,8 +94,8 @@ function loadSaveData() {
   }
 }
 
-function saveData(textareaKey, rowArr) {
-  localStorage.setItem(textareaKey, rowArr);
+function saveData(textareaKey, rowValue) {
+  localStorage.setItem(textareaKey, rowValue);
 }
 
 let saveBtnClicks = {
