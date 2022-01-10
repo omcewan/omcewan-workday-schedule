@@ -12,8 +12,4 @@ Develop a web based day planner app that will display blocks for standard busine
 https://omcewan.github.io/omcewan-workday-schedule/
 
 ## Screenshots
-
-
-## Tasks
-* Click text box to enter data. 
-* Click save button to save data to local storage so that when refresh browser the save date is present.
+![Work Day Scheduler](./assets/images/workdayscheduler.png)

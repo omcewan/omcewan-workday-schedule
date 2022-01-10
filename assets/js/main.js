@@ -64,13 +64,17 @@ function checkHour() {
 setInterval(checkHour, 0);
 
 function saveData() {
-    
+    localStorage.setItem("textarea", "test")
+}
+
+function loadSaveData() {
+    localStorage.getItem("textarea")
 }
 
 let saveBtnClicks = {
   saveBtn1: (saveBtn1.onclick = () => {
     let row1Value = textarea1El.value;
-    console.log(typeof row1Value);
+    console.log(row1Value);
   }),
   saveBtn2: (saveBtn2.onclick = () => {
     let row2Value = textarea2El.value;
