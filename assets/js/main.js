@@ -20,6 +20,28 @@ let textarea6El = document.getElementById("textarea6");
 let textarea7El = document.getElementById("textarea7");
 let textarea8El = document.getElementById("textarea8");
 let textarea9El = document.getElementById("textarea9");
+let textareaElArr = [
+  textarea1El,
+  textarea2El,
+  textarea3El,
+  textarea4El,
+  textarea5El,
+  textarea6El,
+  textarea7El,
+  textarea8El,
+  textarea9El,
+];
+let textareaKey = [
+  "textarea1",
+  "textarea2",
+  "textarea3",
+  "textarea4",
+  "textarea5",
+  "textarea6",
+  "textarea7",
+  "textarea8",
+  "textarea9",
+];
 
 let row1El = document.getElementById("row1");
 let row2El = document.getElementById("row2");
@@ -30,7 +52,7 @@ let row6El = document.getElementById("row6");
 let row7El = document.getElementById("row7");
 let row8El = document.getElementById("row8");
 let row9El = document.getElementById("row9");
-rowArr = [
+let rowArr = [
   row1El,
   row2El,
   row3El,
@@ -61,54 +83,64 @@ function checkHour() {
   }
 }
 
-setInterval(checkHour, 0);
-
-function saveData() {
-    localStorage.setItem("textarea", "test")
+function pageReload() {
+  location.reload();
 }
 
 function loadSaveData() {
-    localStorage.getItem("textarea")
+  for (let i = 0; i < localStorage.length; i++) {
+    console.log(localStorage.getItem(textareaKey[i]));
+    textareaElArr[i].value = localStorage.getItem(textareaKey[i]);
+  }
+}
+
+function saveData(textareaKey, rowArr) {
+  localStorage.setItem(textareaKey, rowArr);
 }
 
 let saveBtnClicks = {
   saveBtn1: (saveBtn1.onclick = () => {
-    let row1Value = textarea1El.value;
-    console.log(row1Value);
+    let row1Value = textareaElArr[0].value;
+    saveData(textareaKey[0], row1Value);
   }),
   saveBtn2: (saveBtn2.onclick = () => {
-    let row2Value = textarea2El.value;
-    console.log(row2Value);
+    let row2Value = textareaElArr[1].value;
+    saveData(textareaKey[1], row2Value);
   }),
   saveBtn3: (saveBtn3.onclick = () => {
-    let row3Value = textarea3El.value;
-    console.log(row3Value);
+    let row3Value = textareaElArr[2].value;
+    saveData(textareaKey[2], row3Value);
   }),
   saveBtn4: (saveBtn4.onclick = () => {
-    let row4Value = textarea4El.value;
-    console.log(row4Value);
+    let row4Value = textareaElArr[3].value;
+    saveData(textareaKey[3], row4Value);
   }),
   saveBtn5: (saveBtn5.onclick = () => {
-    let row5Value = textarea5El.value;
-    console.log(row5Value);
+    let row5Value = textareaElArr[4].value;
+    saveData(textareaKey[4], row5Value);
   }),
   saveBtn6: (saveBtn6.onclick = () => {
-    let row6Value = textarea6El.value;
-    console.log(row6Value);
+    let row6Value = textareaElArr[5].value;
+    saveData(textareaKey[5], row6Value);
   }),
   saveBtn7: (saveBtn7.onclick = () => {
-    let row7Value = textarea7El.value;
-    console.log(row7Value);
+    let row7Value = textareaElArr[6].value;
+    saveData(textareaKey[6], row7Value);
   }),
   saveBtn8: (saveBtn8.onclick = () => {
-    let row8Value = textarea8El.value;
-    console.log(row8Value);
+    let row8Value = textareaElArr[7].value;
+    saveData(textareaKey[7], row8Value);
   }),
   saveBtn9: (saveBtn9.onclick = () => {
-    let row9Value = textarea9El.value;
-    console.log(row9Value);
+    let row9Value = textareaElArr[8].value;
+    saveData(textareaKey[8], row9Value);
   }),
 };
+
+loadSaveData();
+setInterval(pageReload, 900000);
+
+setInterval(checkHour, 0);
 
 saveBtnClicks.saveBtn1();
 saveBtnClicks.saveBtn2();
