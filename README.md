@@ -1,5 +1,4 @@
 # Work Day Scheduler Starter Code
 
 ## Tasks
-* Display Today's Date
-* Containers with normals work day hours
+* Check if time block is in past present or future and set corresponding classes to display styling
